@@ -32,7 +32,8 @@ public class OAuthAttributes {  //OAuth2UserService를 통해 가져온 OAuth2Us
     }
 
     private static OAuthAttributes ofGoogle(String userNameAttributeName, Map<String, Object> attributes) {
-        return OAuthAttributes.builder()
+        return OAuthAttributes
+                .builder()
                 .name((String) attributes.get("name"))
                 .email((String) attributes.get("email"))
                 .picture((String) attributes.get("picture"))
