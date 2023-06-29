@@ -19,7 +19,7 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
                 .and()
                 .authorizeRequests()
                 .antMatchers("/", "/css/**", "/images/**",
-                        "/js/**", "/h2-console/**").permitAll()     //해당 URL들은 permitAll()을 통해 인증(로그인) 없이 접근할 수 있도록 설정한다.
+                        "/js/**", "/h2-console/**", "/profile").permitAll()     //해당 URL들은 permitAll()을 통해 인증(로그인) 없이 접근할 수 있도록 설정한다.
                 .antMatchers("/api/v1/**").hasRole(Role.USER.name())  //"/api/v1/**"요청은 USER 권한을 가진 사람만 접근 가능하도록 한다.
                 .anyRequest().authenticated() //그 외 모든 요청은 인증된 사용자만 접근 가능
                 .and()
